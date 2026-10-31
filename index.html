@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diana Te Cocina | Gastronomía de Autor</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Editorial/Serif) & Montserrat (Modern/Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a1a1a',
+                            light: '#f9f9f9',
+                            accent: '#c5a880'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom base styles for the flowing feel */
+        body {
+            background-color: #1a1a1a; /* Dark mode base for elegance */
+            color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2070&auto=format&fit=crop') center/cover;
+        }
+        /* Hide elements initially for GSAP animations */
+        .fade-up { opacity: 0; transform: translateY(40px); }
+        .fade-in { opacity: 0; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 py-6 px-8 md:px-16 flex justify-between items-center bg-brand-dark/80 backdrop-blur-md transition-all fade-in nav-anim">
+        <div class="font-serif text-2xl tracking-widest text-white uppercase">Diana Te Cocina</div>
+        <div class="hidden md:flex gap-8 text-sm tracking-widest uppercase">
+            <a href="#concepto" class="hover:text-brand-accent transition-colors">Concepto</a>
+            <a href="#experiencias" class="hover:text-brand-accent transition-colors">Experiencias</a>
+            <a href="#menus" class="hover:text-brand-accent transition-colors">Menús</a>
+            <a href="#contacto" class="hover:text-brand-accent transition-colors">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex flex-col justify-center px-8 md:px-24 pt-20">
+        <div class="max-w-4xl">
+            <h2 class="text-brand-accent text-sm md:text-base tracking-[0.3em] uppercase mb-4 fade-up">Gastronomía de Autor · Experiencias Privadas</h2>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 fade-up text-white">El lujo de disfrutar.<br><span class="italic text-gray-300">Sin ocuparte de nada.</span></h1>
+            <p class="text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-10 fade-up text-gray-300">
+                Menús adaptados a tus gustos, necesidades y al tipo de ocasión. Una experiencia gastronómica pensada en exclusiva para ti.
+            </p>
+            <div class="fade-up">
+                <a href="#contacto" class="inline-block border border-brand-accent text-brand-accent px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-accent hover:text-brand-dark transition-all duration-300">
+                    Reserva tu experiencia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01 Concepto -->
+    <section id="concepto" class="py-32 px-8 md:px-24 bg-brand-light text-brand-dark">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-brand-accent text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">01 / El Concepto</span>
+                <h2 class="font-serif text-4xl md:text-5xl mb-8 fade-up">Una experiencia gastronómica pensada para ti.</h2>
+                <p class="text-lg font-light mb-6 fade-up">Cocina cuidada, producto de calidad y atención personalizada.</p>
+                <p class="font-light text-gray-600 leading-relaxed mb-8 fade-up">
+                    Desde organizar tus comidas de la semana hasta celebrar una ocasión especial, Diana lleva la experiencia de una cocina de autor directamente a tu hogar o alojamiento. Todo el proceso está diseñado para que tú solo tengas que sentarte a la mesa.
+                </p>
+                <div class="p-8 border border-gray-200 fade-up">
+                    <h3 class="font-serif text-2xl mb-2">Para Alojamientos y Gestores</h3>
+                    <p class="text-sm font-light text-gray-600">Incorpora una experiencia de chef privada como servicio diferencial para tus huéspedes. Una cena especial que elevará el valor de tu propiedad.</p>
+                </div>
+            </div>
+            <div class="h-[600px] bg-gray-200 overflow-hidden fade-up">
+                <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2070&auto=format&fit=crop" alt="Mesa elegante" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 Experiencias -->
+    <section id="experiencias" class="py-32 px-8 md:px-24">
+        <div class="max-w-6xl mx-auto">
+            <span class="text-brand-accent text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">02 / Experiencias y Eventos</span>
+            <h2 class="font-serif text-4xl md:text-5xl mb-16 fade-up">Más que una comida.<br>Una propuesta diseñada a medida.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="border border-gray-800 p-8 hover:border-brand-accent transition-colors fade-up stagger-card">
+                    <h3 class="font-serif text-xl mb-4">01. Menú Personalizado</h3>
+                    <p class="text-brand-accent text-sm mb-4">80-150 € / pax</p>
+                    <p class="text-sm font-light text-gray-400">Propuesta gastronómica de 4 a 6 pases, creada según tus gustos e ingredientes preferidos.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="border border-gray-800 p-8 hover:border-brand-accent transition-colors fade-up stagger-card">
+                    <h3 class="font-serif text-xl mb-4">02. Menús de Autor</h3>
+                    <p class="text-brand-accent text-sm mb-4">55-85 € / pax</p>
+                    <p class="text-sm font-light text-gray-400">Seis líneas de menú para elegir una experiencia con identidad propia, equilibrio y técnica.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="border border-gray-800 p-8 hover:border-brand-accent transition-colors fade-up stagger-card">
+                    <h3 class="font-serif text-xl mb-4">03. Escapada Romántica</h3>
+                    <p class="text-brand-accent text-sm mb-4">180-280 € / pareja</p>
+                    <p class="text-sm font-light text-gray-400">Cena íntima de 3 a 4 pases para aniversarios o pedidas en casa, apartamento o villa.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="border border-gray-800 p-8 hover:border-brand-accent transition-colors fade-up stagger-card">
+                    <h3 class="font-serif text-xl mb-4">04. Boutique Catering</h3>
+                    <p class="text-brand-accent text-sm mb-4">45-90 € / pax</p>
+                    <p class="text-sm font-light text-gray-400">Formato cuidado para bodas civiles y reuniones privadas de 8 a 40 personas.</p>
+                </div>
+            </div>
+            
+            <!-- Chef Privado Semanal Banner -->
+            <div class="mt-16 bg-[#2a2a2a] p-10 md:p-16 flex flex-col md:flex-row justify-between items-center fade-up">
+                <div class="md:w-2/3 mb-6 md:mb-0">
+                    <h3 class="font-serif text-3xl mb-4">Chef Privado Semanal</h3>
+                    <p class="font-light text-gray-300">Planificación y cocina semanal en tu domicilio. Preparo tus comidas, las organizo en recipientes etiquetados y dejo la nevera lista.</p>
+                </div>
+                <div class="md:w-1/3 text-left md:text-right">
+                    <p class="text-xl font-serif">Desde 150-250 € <span class="text-sm font-sans font-light">/ sesión</span></p>
+                    <p class="text-xs text-gray-400 mt-2">(Ingredientes aparte)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 Menús -->
+    <section id="menus" class="py-32 px-8 md:px-24 bg-brand-light text-brand-dark">
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <span class="text-brand-accent text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">03 / Menús con Personalidad</span>
+            <h2 class="font-serif text-4xl md:text-5xl fade-up">Seis conceptos gastronómicos</h2>
+        </div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="fade-up stagger-menu">
+                <h4 class="font-serif text-2xl border-b border-gray-300 pb-2 mb-4">01. Sin Gluten</h4>
+                <p class="font-light text-gray-600">Alternativas al trigo con ingredientes seleccionados.</p>
+            </div>
+            <div class="fade-up stagger-menu">
+                <h4 class="font-serif text-2xl border-b border-gray-300 pb-2 mb-4">02. Healthy & Fit</h4>
+                <p class="font-light text-gray-600">Menús equilibrados priorizando sabor y bienestar.</p>
+            </div>
+            <div class="fade-up stagger-menu">
+                <h4 class="font-serif text-2xl border-b border-gray-300 pb-2 mb-4">03. Plant-Based</h4>
+                <p class="font-light text-gray-600">Cocina vegetal creativa y sabores intensos.</p>
+            </div>
+            <div class="fade-up stagger-menu">
+                <h4 class="font-serif text-2xl border-b border-gray-300 pb-2 mb-4">04. Fusión Oriental</h4>
+                <p class="font-light text-gray-600">Inspiración asiática y nikkei, matices umami y cítricos.</p>
+            </div>
+            <div class="fade-up stagger-menu">
+                <h4 class="font-serif text-2xl border-b border-gray-300 pb-2 mb-4">05. Sabores del Este</h4>
+                <p class="font-light text-gray-600">Recetas de Europa Oriental y los Balcanes.</p>
+            </div>
+            <div class="fade-up stagger-menu">
+                <h4 class="font-serif text-2xl border-b border-gray-300 pb-2 mb-4">06. Mediterráneo</h4>
+                <p class="font-light text-gray-600">Producto de temporada y auténticos sabores mediterráneos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 Contacto / Footer -->
+    <section id="contacto" class="py-32 px-8 md:px-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="text-brand-accent text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">04 / Método de Trabajo</span>
+            <h2 class="font-serif text-5xl md:text-6xl mb-12 fade-up">¿Imaginamos tu próxima experiencia?</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-12 mb-16 fade-up">
+                <div>
+                    <h4 class="text-brand-accent font-serif text-xl mb-2">01. Hablamos</h4>
+                    <p class="text-sm font-light text-gray-400">Preferencias, alergias y presupuesto.</p>
+                </div>
+                <div>
+                    <h4 class="text-brand-accent font-serif text-xl mb-2">02. Diseñamos</h4>
+                    <p class="text-sm font-light text-gray-400">Concretamos menú y logística.</p>
+                </div>
+                <div>
+                    <h4 class="text-brand-accent font-serif text-xl mb-2">03. Disfrutas</h4>
+                    <p class="text-sm font-light text-gray-400">Cocino, presento y recojo todo.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-16 fade-up">
+                <p class="text-xl mb-4 font-serif">Reserva en Valencia y alrededores</p>
+                <div class="flex flex-col items-center gap-4">
+                    <a href="https://wa.me/34663899626" class="text-3xl font-light hover:text-brand-accent transition-colors">+34 663 89 96 26</a>
+                    <a href="https://instagram.com/dianatecocina" target="_blank" class="text-xl font-light tracking-widest uppercase hover:text-brand-accent transition-colors">@dianatecocina</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GSAP Animation Scripts -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initial Nav and Hero load animations
+        gsap.to(".nav-anim", { opacity: 1, duration: 1.5, ease: "power3.out" });
+        gsap.to("#hero .fade-up", { 
+            y: 0, 
+            opacity: 1, 
+            duration: 1.2, 
+            stagger: 0.2, 
+            ease: "power3.out",
+            delay: 0.2 
+        });
+
+        // Scroll animations for all fade-up elements
+        gsap.utils.toArray('.fade-up:not(#hero .fade-up)').forEach(element => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%", // Triggers when top of element hits 85% of viewport
+                    toggleActions: "play none none reverse"
+                },
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Staggered cards in Experiencias
+        ScrollTrigger.batch(".stagger-card", {
+            start: "top 85%",
+            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: "power3.out" })
+        });
+
+        // Staggered menus
+        ScrollTrigger.batch(".stagger-menu", {
+            start: "top 85%",
+            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out" })
+        });
+    </script>
+</body>
+</html>
