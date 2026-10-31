@@ -37,29 +37,31 @@
     </script>
 
     <style>
+        /* TEMA OSCURO - Fondo Cacao, Texto Marfil */
         body {
-            background-color: #F9F3E9;
-            color: #372821;
+            background-color: #372821; 
+            color: #F9F3E9;
             overflow-x: hidden;
         }
         
+        /* Imagen principal temporal: Mujer chef en ambiente oscuro */
         .hero-bg {
-            background: linear-gradient(rgba(75, 36, 46, 0.3), rgba(75, 36, 46, 0.7)), url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2070&auto=format&fit=crop') center/cover;
+            background: linear-gradient(rgba(55, 40, 33, 0.7), rgba(55, 40, 33, 0.9)), url('https://images.unsplash.com/photo-1628191010210-a59de33e5941?q=80&w=2070&auto=format&fit=crop') center/cover;
         }
         
         .fade-up { opacity: 0; transform: translateY(40px); }
         .fade-in { opacity: 0; }
         
-        .text-shadow-sm { text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-        .text-shadow-light { text-shadow: 1px 1px 2px rgba(255,255,255,0.7); }
+        .text-shadow-sm { text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+        .text-shadow-light { text-shadow: 1px 1px 2px rgba(0,0,0,0.6); }
     </style>
 </head>
-<body class="font-sans antialiased text-brand-cacao relative">
+<body class="font-sans antialiased text-brand-marfil relative">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 py-6 px-8 md:px-16 flex justify-between items-center bg-brand-marfil/95 backdrop-blur-sm transition-all fade-in nav-anim border-b border-brand-avellana/30">
-        <div class="font-serif text-2xl tracking-widest text-brand-vino uppercase">Diana Te Cocina</div>
-        <div class="hidden md:flex gap-8 text-sm tracking-widest uppercase font-medium text-brand-vino">
+    <nav class="fixed w-full z-50 top-0 py-6 px-8 md:px-16 flex justify-between items-center bg-brand-cacao/95 backdrop-blur-sm transition-all fade-in nav-anim border-b border-brand-avellana/20">
+        <div class="font-serif text-2xl tracking-widest text-brand-marfil uppercase">Diana Te Cocina</div>
+        <div class="hidden md:flex gap-8 text-sm tracking-widest uppercase font-medium text-brand-marfil">
             <a href="#dia-a-dia" class="hover:text-brand-avellana transition-colors">Día a Día</a>
             <a href="#experiencias" class="hover:text-brand-avellana transition-colors">Experiencias</a>
             <a href="#menus" class="hover:text-brand-avellana transition-colors">Menús</a>
@@ -70,13 +72,13 @@
     <!-- Hero Section -->
     <section class="hero-bg h-screen flex flex-col justify-center px-8 md:px-24 pt-20">
         <div class="max-w-4xl">
-            <h2 class="text-brand-marfil text-sm md:text-base tracking-[0.3em] uppercase mb-4 fade-up font-bold">Chef Privada · Experiencias a Domicilio</h2>
+            <h2 class="text-brand-avellana text-sm md:text-base tracking-[0.3em] uppercase mb-4 fade-up font-bold">Chef Privada · Experiencias a Domicilio</h2>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight mb-8 fade-up text-brand-marfil">Gastronomía<br><span class="italic text-brand-avellana">con intención.</span></h1>
-            <p class="text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-10 fade-up text-brand-marfil">
+            <p class="text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-10 fade-up text-brand-marfil/90">
                 Desde la organización de tus comidas semanales hasta una cena especial, Diana lleva a tu hogar una cocina personal, elegante y adaptada a tus preferencias.
             </p>
             <div class="fade-up">
-                <a href="https://wa.me/34663899626" target="_blank" class="inline-block bg-brand-vino text-brand-marfil px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-cacao transition-all duration-300">
+                <a href="https://wa.me/34663899626" target="_blank" class="inline-block bg-brand-marfil text-brand-cacao px-10 py-4 uppercase tracking-widest text-sm font-bold hover:bg-brand-avellana hover:text-white transition-all duration-300">
                     Reservas & Consultas
                 </a>
             </div>
@@ -84,80 +86,84 @@
     </section>
 
     <!-- 01 El Día a Día, Resuelto -->
-    <section id="dia-a-dia" class="py-32 px-8 md:px-24 bg-brand-marfil">
+    <section id="dia-a-dia" class="py-32 px-8 md:px-24 bg-brand-cacao">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
                 <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">01 / El Día a Día, Resuelto</span>
-                <h2 class="font-serif text-4xl md:text-5xl mb-8 fade-up text-brand-vino">Tu semana,<br><span class="italic">bien servida.</span></h2>
-                <h3 class="text-lg font-bold mb-4 fade-up uppercase tracking-widest text-brand-cacao">Chef Privada Semanal · Batch Cooking</h3>
-                <p class="font-light leading-relaxed mb-8 fade-up text-brand-cacao">
+                <h2 class="font-serif text-4xl md:text-5xl mb-8 fade-up text-brand-marfil">Tu semana,<br><span class="italic text-brand-avellana">bien servida.</span></h2>
+                <h3 class="text-lg font-bold mb-4 fade-up uppercase tracking-widest text-brand-marfil/90">Chef Privada Semanal · Batch Cooking</h3>
+                <p class="font-light leading-relaxed mb-8 fade-up text-brand-marfil/70">
                     Voy a tu domicilio una vez por semana para preparar tus comidas, organizar la nevera en recipientes etiquetados y dejarlo todo listo para que solo tengas que calentar y disfrutar. Pensado para quienes quieren comer bien sin dedicar su tiempo a planificar, comprar y cocinar cada día.
                 </p>
-                <div class="p-8 border border-brand-avellana fade-up bg-brand-marfil">
-                    <p class="text-xl font-serif text-brand-vino mb-1">Desde 150-250 € <span class="text-sm font-sans font-light text-brand-cacao">/ sesión semanal</span></p>
-                    <p class="text-xs text-brand-cacao uppercase tracking-widest">(Ingredientes aparte)</p>
+                <div class="p-8 border border-brand-avellana/50 fade-up bg-brand-vino/40 backdrop-blur-sm">
+                    <p class="text-xl font-serif text-brand-marfil mb-1">Desde 150-250 € <span class="text-sm font-sans font-light text-brand-marfil/70">/ sesión semanal</span></p>
+                    <p class="text-xs text-brand-avellana uppercase tracking-widest">(Ingredientes aparte)</p>
                 </div>
             </div>
-            <div class="h-[600px] bg-brand-vino/10 overflow-hidden fade-up p-2">
-                <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?q=80&w=2000&auto=format&fit=crop" alt="Batch cooking saludable" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+            <div class="h-[600px] bg-brand-vino overflow-hidden fade-up p-2 border border-brand-avellana/30 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?q=80&w=2000&auto=format&fit=crop" alt="Batch cooking saludable" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 opacity-90">
             </div>
         </div>
     </section>
 
     <!-- 02 Experiencias Privadas -->
-    <section id="experiencias" class="py-32 px-8 md:px-24 bg-white">
+    <section id="experiencias" class="py-32 px-8 md:px-24 bg-brand-vino">
         <div class="max-w-6xl mx-auto">
             <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">02 / Experiencias Privadas</span>
-            <h2 class="font-serif text-4xl md:text-5xl mb-6 fade-up text-brand-vino">Una mesa hecha<br><span class="italic">para la ocasión.</span></h2>
-            <p class="text-lg font-light mb-16 fade-up text-brand-cacao">Cada propuesta se adapta al tipo de encuentro, los gustos y las necesidades alimentarias indicadas.</p>
+            <h2 class="font-serif text-4xl md:text-5xl mb-6 fade-up text-brand-marfil">Una mesa hecha<br><span class="italic text-brand-avellana">para la ocasión.</span></h2>
+            <p class="text-lg font-light mb-16 fade-up text-brand-marfil/80">Cada propuesta se adapta al tipo de encuentro, los gustos y las necesidades alimentarias indicadas.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">01. Menú Personalizado</h3>
+                <!-- Card 1 -->
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-avellana transition-colors fade-up stagger-card bg-brand-cacao">
+                    <h3 class="font-serif text-2xl mb-2 text-brand-marfil">01. Menú Personalizado</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">De 4 a 6 pases</p>
-                    <p class="font-light text-brand-cacao mb-8">Una experiencia creada según tus gustos, ingredientes preferidos y necesidades alimentarias.</p>
-                    <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
+                    <p class="font-light text-brand-marfil/70 mb-8">Una experiencia creada según tus gustos, ingredientes preferidos y necesidades alimentarias.</p>
+                    <div class="border-t border-brand-avellana/20 pt-4 flex justify-between items-end">
                         <div>
-                            <p class="text-lg font-serif text-brand-vino">80-150 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
-                            <p class="text-xs text-brand-cacao">Ingredientes aparte</p>
+                            <p class="text-lg font-serif text-brand-marfil">80-150 € <span class="text-sm font-sans font-light text-brand-marfil/60">/ persona</span></p>
+                            <p class="text-xs text-brand-marfil/50">Ingredientes aparte</p>
                         </div>
                         <p class="text-xs uppercase text-brand-avellana font-bold">1-12 Personas</p>
                     </div>
                 </div>
                 
-                <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">02. Menús de Autor</h3>
+                <!-- Card 2 -->
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-avellana transition-colors fade-up stagger-card bg-brand-cacao">
+                    <h3 class="font-serif text-2xl mb-2 text-brand-marfil">02. Menús de Autor</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">Seis conceptos</p>
-                    <p class="font-light text-brand-cacao mb-8">Elige una línea gastronómica con identidad propia, equilibrio y atención a la presentación.</p>
-                    <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
+                    <p class="font-light text-brand-marfil/70 mb-8">Elige una línea gastronómica con identidad propia, equilibrio y atención a la presentación.</p>
+                    <div class="border-t border-brand-avellana/20 pt-4 flex justify-between items-end">
                         <div>
-                            <p class="text-lg font-serif text-brand-vino">55-85 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
-                            <p class="text-xs text-brand-cacao">Servicio completo</p>
+                            <p class="text-lg font-serif text-brand-marfil">55-85 € <span class="text-sm font-sans font-light text-brand-marfil/60">/ persona</span></p>
+                            <p class="text-xs text-brand-marfil/50">Servicio completo</p>
                         </div>
                         <p class="text-xs uppercase text-brand-avellana font-bold">2-16 Personas</p>
                     </div>
                 </div>
 
-                <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">03. Escapada Romántica</h3>
+                <!-- Card 3 -->
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-avellana transition-colors fade-up stagger-card bg-brand-cacao">
+                    <h3 class="font-serif text-2xl mb-2 text-brand-marfil">03. Escapada Romántica</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">Una cena para dos</p>
-                    <p class="font-light text-brand-cacao mb-8">Cena íntima de 3 a 4 pases para aniversarios, pedidas o una ocasión especial en casa o villa.</p>
-                    <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
+                    <p class="font-light text-brand-marfil/70 mb-8">Cena íntima de 3 a 4 pases para aniversarios, pedidas o una ocasión especial en casa o villa.</p>
+                    <div class="border-t border-brand-avellana/20 pt-4 flex justify-between items-end">
                         <div>
-                            <p class="text-lg font-serif text-brand-vino">180-280 € <span class="text-sm font-sans font-light text-brand-cacao">/ pareja</span></p>
-                            <p class="text-xs text-brand-cacao">Llave en mano</p>
+                            <p class="text-lg font-serif text-brand-marfil">180-280 € <span class="text-sm font-sans font-light text-brand-marfil/60">/ pareja</span></p>
+                            <p class="text-xs text-brand-marfil/50">Llave en mano</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">04. Boutique Catering</h3>
+                <!-- Card 4 -->
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-avellana transition-colors fade-up stagger-card bg-brand-cacao">
+                    <h3 class="font-serif text-2xl mb-2 text-brand-marfil">04. Boutique Catering</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">Celebraciones cuidadas</p>
-                    <p class="font-light text-brand-cacao mb-8">Catering para bodas civiles, aniversarios y reuniones privadas, en formato banquete o cóctel.</p>
-                    <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
+                    <p class="font-light text-brand-marfil/70 mb-8">Catering para bodas civiles, aniversarios y reuniones privadas, en formato banquete o cóctel.</p>
+                    <div class="border-t border-brand-avellana/20 pt-4 flex justify-between items-end">
                         <div>
-                            <p class="text-lg font-serif text-brand-vino">45-90 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
-                            <p class="text-xs text-brand-cacao">Según formato</p>
+                            <p class="text-lg font-serif text-brand-marfil">45-90 € <span class="text-sm font-sans font-light text-brand-marfil/60">/ persona</span></p>
+                            <p class="text-xs text-brand-marfil/50">Según formato</p>
                         </div>
                         <p class="text-xs uppercase text-brand-avellana font-bold">8-40 Personas</p>
                     </div>
@@ -167,6 +173,21 @@
     </section>
 
     <!-- 03 Menús -->
-    <section id="menus" class="py-32 px-8 md:px-24 bg-brand-vino text-brand-marfil">
+    <section id="menus" class="py-32 px-8 md:px-24 bg-brand-cacao text-brand-marfil">
         <div class="max-w-6xl mx-auto text-center mb-16">
-            <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-
+            <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">03 / Seis Líneas Gastronómicas</span>
+            <h2 class="font-serif text-4xl md:text-5xl fade-up text-brand-marfil mb-6">Menús con personalidad.</h2>
+            <p class="font-light text-brand-marfil/70 fade-up">Conceptos para escoger la experiencia que mejor encaje con tu estilo, preferencias y motivo de la ocasión.</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="fade-up stagger-menu border-t border-brand-avellana/30 pt-6">
+                <h4 class="font-serif text-2xl text-brand-marfil mb-2">01. Sin Gluten</h4>
+                <p class="font-light text-brand-marfil/70 text-sm leading-relaxed">Elaboraciones con ingredientes seleccionados y alternativas al trigo.</p>
+            </div>
+            <div class="fade-up stagger-menu border-t border-brand-avellana/30 pt-6">
+                <h4 class="font-serif text-2xl text-brand-marfil mb-2">02. Healthy & Fit</h4>
+                <p class="font-light text-brand-marfil/70 text-sm leading-relaxed">Menús equilibrados, ingredientes de calidad y técnicas que priorizan sabor.</p>
+            </div>
+            <div class="fade-up stagger-menu border-t border-brand-avellana/30 pt-6">
+                <h4 class="font-serif text-2xl text-brand-marfil
