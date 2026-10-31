@@ -8,7 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fallback Fonts from Google Fonts just in case local fonts aren't installed -->
+    <!-- Fallback Fonts from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- GSAP for Smooth Animations -->
@@ -20,7 +20,6 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        /* Priorizando las tipografías del manual de identidad */
                         serif: ['"Liberation Serif"', '"PT Serif"', 'serif'],
                         sans: ['"DejaVu Sans"', '"Open Sans"', 'sans-serif'],
                     },
@@ -39,27 +38,23 @@
 
     <style>
         body {
-            background-color: #F9F3E9; /* Marfil */
-            color: #372821; /* Cacao */
+            background-color: #F9F3E9;
+            color: #372821;
             overflow-x: hidden;
         }
         
-        /* Imagen principal: Mujer chef, de espaldas/perfil, estilo elegante y natural */
         .hero-bg {
             background: linear-gradient(rgba(75, 36, 46, 0.3), rgba(75, 36, 46, 0.7)), url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2070&auto=format&fit=crop') center/cover;
         }
         
-        /* GSAP Initial States */
         .fade-up { opacity: 0; transform: translateY(40px); }
         .fade-in { opacity: 0; }
         
-        /* Líneas y detalles color Avellana */
-        .border-avellana {
-            border-color: #B18A69;
-        }
+        .text-shadow-sm { text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        .text-shadow-light { text-shadow: 1px 1px 2px rgba(255,255,255,0.7); }
     </style>
 </head>
-<body class="font-sans antialiased text-brand-cacao">
+<body class="font-sans antialiased text-brand-cacao relative">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 py-6 px-8 md:px-16 flex justify-between items-center bg-brand-marfil/95 backdrop-blur-sm transition-all fade-in nav-anim border-b border-brand-avellana/30">
@@ -117,7 +112,6 @@
             <p class="text-lg font-light mb-16 fade-up text-brand-cacao">Cada propuesta se adapta al tipo de encuentro, los gustos y las necesidades alimentarias indicadas.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1 -->
                 <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
                     <h3 class="font-serif text-2xl mb-2 text-brand-vino">01. Menú Personalizado</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">De 4 a 6 pases</p>
@@ -131,7 +125,6 @@
                     </div>
                 </div>
                 
-                <!-- Card 2 -->
                 <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
                     <h3 class="font-serif text-2xl mb-2 text-brand-vino">02. Menús de Autor</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">Seis conceptos</p>
@@ -145,7 +138,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
                     <h3 class="font-serif text-2xl mb-2 text-brand-vino">03. Escapada Romántica</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">Una cena para dos</p>
@@ -158,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="border border-brand-avellana/40 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
                     <h3 class="font-serif text-2xl mb-2 text-brand-vino">04. Boutique Catering</h3>
                     <p class="text-sm uppercase tracking-widest text-brand-avellana mb-6 font-bold">Celebraciones cuidadas</p>
@@ -178,111 +169,4 @@
     <!-- 03 Menús -->
     <section id="menus" class="py-32 px-8 md:px-24 bg-brand-vino text-brand-marfil">
         <div class="max-w-6xl mx-auto text-center mb-16">
-            <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">03 / Seis Líneas Gastronómicas</span>
-            <h2 class="font-serif text-4xl md:text-5xl fade-up text-brand-marfil mb-6">Menús con personalidad.</h2>
-            <p class="font-light text-brand-marfil/80 fade-up">Conceptos para escoger la experiencia que mejor encaje con tu estilo, preferencias y motivo de la ocasión.</p>
-        </div>
-        
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div class="fade-up stagger-menu border-t border-brand-avellana/50 pt-6">
-                <h4 class="font-serif text-2xl text-brand-marfil mb-2">01. Sin Gluten</h4>
-                <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Elaboraciones con ingredientes seleccionados y alternativas al trigo, atendiendo a las necesidades indicadas.</p>
-            </div>
-            <div class="fade-up stagger-menu border-t border-brand-avellana/50 pt-6">
-                <h4 class="font-serif text-2xl text-brand-marfil mb-2">02. Healthy & Fit</h4>
-                <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Menús equilibrados, ingredientes de calidad y técnicas que priorizan sabor y textura.</p>
-            </div>
-            <div class="fade-up stagger-menu border-t border-brand-avellana/50 pt-6">
-                <h4 class="font-serif text-2xl text-brand-marfil mb-2">03. Plant-Based</h4>
-                <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Cocina vegetal creativa, sabores intensos y combinaciones con los vegetales como protagonistas.</p>
-            </div>
-            <div class="fade-up stagger-menu border-t border-brand-avellana/50 pt-6">
-                <h4 class="font-serif text-2xl text-brand-marfil mb-2">04. Fusión Oriental</h4>
-                <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Inspiración asiática y nikkei, matices umami, cítricos y equilibrio aromático.</p>
-            </div>
-            <div class="fade-up stagger-menu border-t border-brand-avellana/50 pt-6">
-                <h4 class="font-serif text-2xl text-brand-marfil mb-2">05. Sabores del Este</h4>
-                <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Relectura contemporánea de recetas de Europa Oriental y los Balcanes.</p>
-            </div>
-            <div class="fade-up stagger-menu border-t border-brand-avellana/50 pt-6">
-                <h4 class="font-serif text-2xl text-brand-marfil mb-2">06. Mediterráneo de Autor</h4>
-                <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Aceite de oliva virgen extra, hierbas frescas y productos de temporada.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Grilla Instagram -->
-    <section id="instagram" class="py-32 px-8 md:px-24 bg-brand-marfil">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">Comunidad & Platos</span>
-            <h2 class="font-serif text-4xl md:text-5xl mb-12 fade-up text-brand-vino">El placer de comer bien.</h2>
-            
-            <!-- Aquí se inserta la imagen de la grilla de Instagram suministrada -->
-            <div class="fade-up shadow-xl overflow-hidden border border-brand-avellana/30">
-                <img src="IMG-20261030-WA0000.jpg" alt="Grilla de platos y servicios de Diana Te Cocina" class="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-700">
-            </div>
-            
-            <div class="mt-12 fade-up">
-                <a href="https://instagram.com/dianatecocina" target="_blank" class="inline-block bg-transparent border border-brand-vino text-brand-vino px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-vino hover:text-brand-marfil transition-all duration-300">
-                    Sígueme en Instagram
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Contacto -->
-    <footer class="bg-white py-16 px-8 border-t border-brand-avellana/30">
-        <div class="max-w-4xl mx-auto text-center fade-up">
-            <h2 class="font-serif text-3xl mb-8 text-brand-vino">Diana Te Cocina</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-                <a href="https://wa.me/34663899626" class="text-2xl font-light hover:text-brand-avellana transition-colors text-brand-cacao">+34 663 89 96 26</a>
-                <a href="https://instagram.com/dianatecocina" target="_blank" class="text-lg font-bold tracking-widest uppercase hover:text-brand-avellana transition-colors text-brand-cacao">@dianatecocina</a>
-            </div>
-            <p class="text-sm uppercase tracking-widest text-brand-avellana mt-12">Valencia y alrededores</p>
-        </div>
-    </footer>
-
-    <!-- GSAP Animation Scripts -->
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animación inicial Hero
-        gsap.to(".nav-anim", { opacity: 1, duration: 1.5, ease: "power3.out" });
-        gsap.to(".hero-bg .fade-up", { 
-            y: 0, 
-            opacity: 1, 
-            duration: 1.2, 
-            stagger: 0.2, 
-            ease: "power3.out",
-            delay: 0.2 
-        });
-
-        // Animaciones Scroll
-        gsap.utils.toArray('.fade-up:not(.hero-bg .fade-up)').forEach(element => {
-            gsap.to(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                },
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out"
-            });
-        });
-
-        // Stagger cards
-        ScrollTrigger.batch(".stagger-card", {
-            start: "top 85%",
-            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: "power3.out" })
-        });
-
-        // Stagger menus
-        ScrollTrigger.batch(".stagger-menu", {
-            start: "top 85%",
-            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out" })
-        });
-    </script>
-</body>
-</html>
+            <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-
