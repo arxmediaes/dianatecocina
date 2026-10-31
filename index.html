@@ -38,7 +38,6 @@
     </script>
 
     <style>
-        /* Fondo Marfil / Champán y Letras Cacao */
         body {
             background-color: #F9F3E9; 
             color: #372821;
@@ -96,7 +95,7 @@
                 <h2 class="font-serif text-4xl md:text-5xl mb-6 fade-up text-brand-vino">Tu semana,<br><span class="italic text-brand-avellana">bien servida.</span></h2>
                 <h3 class="text-sm font-bold mb-4 fade-up uppercase tracking-widest text-brand-cacao">Chef Privada Semanal · Batch Cooking</h3>
                 <p class="font-light leading-relaxed mb-8 fade-up text-brand-cacao">
-                    Voy a tu domicilio una vez por semana para preparar tus comidas, organizar la nevera en recipientes etiquetados y dejarlo todo listo para que solo tengas que calentar y disfrutar. Pensado para quienes quieren comer bien sin dedicar su tiempo a planificar, comprar y cocinar cada día.
+                    Voy a tu domicilio una vez por semana para preparar tus comidas, organizar la nevera en recipientes etiquetados y dejarlo todo listo para que solo tengas que calentar y disfrutar.
                 </p>
                 <div class="p-8 border border-brand-avellana/40 fade-up bg-white/60">
                     <p class="text-xl font-serif text-brand-vino mb-1">Desde 150-250 € <span class="text-sm font-sans font-light text-brand-cacao">/ sesión semanal</span></p>
@@ -117,7 +116,7 @@
             <p class="text-lg font-light mb-16 fade-up text-brand-cacao">Cada propuesta se adapta al tipo de encuentro, los gustos y las necesidades alimentarias indicadas.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1: Menú Personalizado (Actualizado) -->
+                <!-- Card 1: Menú Personalizado -->
                 <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil flex flex-col justify-between">
                     <div>
                         <h3 class="font-serif text-2xl mb-2 text-brand-vino">01. Menú Personalizado</h3>
@@ -138,19 +137,24 @@
                     </div>
                 </div>
                 
-                <!-- Card 2 -->
+                <!-- Card 2: Menús de Autor -->
                 <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil flex flex-col justify-between">
                     <div>
                         <h3 class="font-serif text-2xl mb-2 text-brand-vino">02. Menús de Autor</h3>
                         <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Seis conceptos</p>
                         <p class="font-light text-brand-cacao mb-8">Elige una línea gastronómica con identidad propia, equilibrio y atención a la presentación.</p>
                     </div>
-                    <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
-                        <div>
-                            <p class="text-lg font-serif text-brand-vino">55-85 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
-                            <p class="text-xs text-brand-cacao">Servicio completo</p>
+                    <div>
+                        <button onclick="openAutorModal()" class="w-full mb-6 bg-brand-vino text-brand-marfil py-3 px-6 text-xs uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors text-center cursor-pointer">
+                            Ver detalles del Menú
+                        </button>
+                        <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
+                            <div>
+                                <p class="text-xl font-serif text-brand-vino"><span class="line-through text-brand-cacao/40 text-sm mr-1">360 €</span>180 € <span class="text-sm font-sans font-light text-brand-cacao">/ 2 personas</span></p>
+                                <p class="text-xs text-brand-cacao">Servicio completo</p>
+                            </div>
+                            <p class="text-xs uppercase text-brand-avellana font-bold text-right">Para 2 pers.<br><span class="font-normal lowercase">(Más, consultar)</span></p>
                         </div>
-                        <p class="text-xs uppercase text-brand-avellana font-bold text-right">Para 2 pers.<br><span class="font-normal lowercase">(Más, consultar)</span></p>
                     </div>
                 </div>
 
@@ -189,7 +193,7 @@
         </div>
     </section>
 
-    <!-- Modal de Detalles: Menú Personalizado (Actualizado con los datos exactos) -->
+    <!-- Modal de Detalles: Menú Personalizado -->
     <div id="menuModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4">
         <div class="bg-brand-marfil border border-brand-avellana max-w-2xl w-full p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal()" class="absolute top-4 right-6 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
@@ -217,6 +221,52 @@
             <div class="mt-8 pt-6 border-t border-brand-avellana/30 flex flex-col md:flex-row justify-between items-center gap-4">
                 <span class="text-xs text-brand-cacao/80 font-medium">* Los ingredientes y los envases/tuppers se cobran aparte.</span>
                 <a href="https://wa.me/34663899626?text=Hola%20Diana,%20me%20interesa%20reservar%20el%20Menú%20Personalizado." target="_blank" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors text-center w-full md:w-auto">
+                    Reservar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles: Menús de Autor -->
+    <div id="autorModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-2xl w-full p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAutorModal()" class="absolute top-4 right-6 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+            
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Detalle del Servicio</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-4">Menús de Autor</h3>
+            <p class="text-sm font-bold uppercase tracking-widest text-brand-cacao mb-6">Precio: <span class="line-through text-brand-cacao/50 mr-1">360 €</span> 180 € / Para 2 personas <br><span class="font-light text-xs lowercase">(Para más personas, consultar)</span></p>
+            
+            <div class="space-y-6 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <div>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Qué incluiría el servicio:</h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li>Planificación del menú semanal.</li>
+                        <li>Preparación de 5 días de comidas.</li>
+                        <li>Preparación de la cena.</li>
+                        <li>2–3 proteínas diferentes.</li>
+                        <li>Verduras y guarniciones.</li>
+                        <li>Organización en recipientes (tuppers).</li>
+                        <li>Limpieza del área de trabajo.</li>
+                        <li>Desplazamiento.</li>
+                    </ul>
+                </div>
+                
+                <div class="pt-4">
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Selecciona tu concepto gastronómico:</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 list-disc pl-5 marker:text-brand-avellana font-medium">
+                        <li>1) Sin Gluten</li>
+                        <li>2) Healthy & Fit</li>
+                        <li>3) Plant Based</li>
+                        <li>4) Fusión Oriental</li>
+                        <li>5) Sabores del Este</li>
+                        <li>6) Mediterráneo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-brand-avellana/30 flex flex-col md:flex-row justify-between items-center gap-4">
+                <span class="text-xs text-brand-cacao/80 font-medium">* Los ingredientes y los envases/tuppers se cobran aparte.</span>
+                <a href="https://wa.me/34663899626?text=Hola%20Diana,%20me%20interesa%20reservar%20uno%20de%20los%20Menús%20de%20Autor." target="_blank" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors text-center w-full md:w-auto">
                     Reservar
                 </a>
             </div>
@@ -259,7 +309,7 @@
         </div>
     </section>
 
-    <!-- Grilla / Galería de Instagram -->
+    <!-- Grilla / Galería de Instagram (Fotografías corregidas) -->
     <section id="instagram" class="py-32 px-4 md:px-12 lg:px-24 bg-brand-marfil">
         <div class="max-w-5xl mx-auto text-center mb-16">
             <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-4 fade-up">Comunidad & Platos</span>
@@ -267,44 +317,53 @@
         </div>
         
         <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2 fade-up border border-brand-avellana/30 p-1 bg-white shadow-xl">
+            <!-- Foto 1 (Sopa) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-vino">
                 <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop" alt="Plato saludable" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 left-4">
                     <p class="font-serif text-white text-lg md:text-xl leading-tight text-shadow-sm">El placer<br>de comer bien.</p>
                 </div>
             </div>
+            <!-- Foto 2 (Masa / Preparación) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-marfil">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745a872e?q=80&w=800&auto=format&fit=crop" alt="Preparación artesanal" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+                <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?q=80&w=800&auto=format&fit=crop" alt="Preparación artesanal" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 right-4 text-right">
                     <p class="font-serif text-brand-vino text-lg md:text-xl leading-tight italic">Recibir<br>sin prisas.</p>
                 </div>
             </div>
+            <!-- Foto 3 (Copa de vino) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
                 <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop" alt="Mesa elegante" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute bottom-4 left-4">
                     <p class="font-serif text-white text-sm leading-tight text-shadow-sm">Una mesa<br>para dos.</p>
                 </div>
             </div>
+            <!-- Foto 4 (Vegetales) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-avellana">
                 <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="Cocina plant-based" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
             </div>
+            <!-- Bloque Central con Logo Estilizado -->
             <div class="relative aspect-square flex flex-col items-center justify-center bg-brand-marfil p-4 text-center border border-brand-avellana/20">
                 <span class="font-script text-4xl md:text-5xl text-brand-vino mb-1">Diana</span>
                 <p class="text-[0.6rem] uppercase tracking-[0.3em] font-bold text-brand-cacao mb-3 border-b border-brand-avellana/40 pb-2">Te Cocina</p>
                 <p class="text-xs font-light text-brand-cacao/80">Cocina personal en Valencia</p>
             </div>
+            <!-- Foto 6 (Restaurante cena) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-vino">
-                <img src="https://images.unsplash.com/photo-1559564114-633ca5e0034a?q=80&w=800&auto=format&fit=crop" alt="Cena romántica" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-85">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Cena romántica" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-85">
             </div>
+            <!-- Foto 7 (Tupper / Batch cooking) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-marfil">
-                <img src="https://images.unsplash.com/photo-1543363363-241f92410a80?q=80&w=800&auto=format&fit=crop" alt="Batch cooking" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=800&auto=format&fit=crop" alt="Batch cooking" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 left-4">
-                    <p class="font-serif text-brand-vino text-lg leading-tight">Tu semana,<br><span class="italic">resuelta.</span></p>
+                    <p class="font-serif text-brand-marfil text-lg leading-tight text-shadow-sm">Tu semana,<br><span class="italic">resuelta.</span></p>
                 </div>
             </div>
+            <!-- Foto 8 (Plato principal) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" alt="Plato principal" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-85">
             </div>
+            <!-- Foto 9 (Plato detalle) -->
             <div class="relative group aspect-square overflow-hidden bg-brand-vino">
                 <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop" alt="Fusión y autor" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 right-4 text-right">
@@ -352,7 +411,7 @@
 
     <!-- Funciones JavaScript del Modal y Animaciones -->
     <script>
-        // Modal functions
+        // Modal functions - Personalizado
         function openModal() {
             const modal = document.getElementById('menuModal');
             modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -361,6 +420,19 @@
 
         function closeModal() {
             const modal = document.getElementById('menuModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Modal functions - Autor
+        function openAutorModal() {
+            const modal = document.getElementById('autorModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeAutorModal() {
+            const modal = document.getElementById('autorModal');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
@@ -402,7 +474,5 @@
             onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out" })
         });
     </script>
-</body>
-</html>
 </body>
 </html>
