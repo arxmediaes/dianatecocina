@@ -8,7 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Playfair Display + Great Vibes (para imitar el logotipo manuscrito) + Open Sans -->
+    <!-- Google Fonts: Great Vibes (Logo) + Playfair Display (Títulos) + Open Sans (Textos) -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- GSAP for Smooth Animations -->
@@ -38,7 +38,7 @@
     </script>
 
     <style>
-        /* Fondo Marfil / Champán y Letras Cacao por defecto */
+        /* Fondo Marfil / Champán y Letras Cacao */
         body {
             background-color: #F9F3E9; 
             color: #372821;
@@ -51,16 +51,14 @@
         
         .fade-up { opacity: 0; transform: translateY(40px); }
         .fade-in { opacity: 0; }
-        
         .text-shadow-sm { text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
     </style>
 </head>
 <body class="font-sans antialiased text-brand-cacao relative">
 
-    <!-- Navigation con Logotipo Estilizado -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 py-5 px-8 md:px-16 flex justify-between items-center bg-[#F9F3E9]/95 backdrop-blur-sm transition-all fade-in nav-anim border-b border-[#B18A69]/30">
         <div class="flex items-center gap-3">
-            <!-- Emblema de la campana/rama simplificado en SVG y Nombre en tipografía del manual -->
             <div class="flex flex-col">
                 <span class="font-script text-3xl md:text-4xl text-brand-vino tracking-wide">Diana</span>
                 <span class="text-[0.55rem] uppercase tracking-[0.25em] text-brand-cacao font-bold -mt-1">Te Cocina</span>
@@ -90,7 +88,7 @@
         </div>
     </section>
 
-    <!-- 01 El Día a Día, Resuelto (Fondo Marfil, Textos Cacao, Titulares Vino) -->
+    <!-- 01 El Día a Día, Resuelto -->
     <section id="dia-a-dia" class="py-32 px-8 md:px-24 bg-brand-marfil">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
@@ -119,63 +117,111 @@
             <p class="text-lg font-light mb-16 fade-up text-brand-cacao">Cada propuesta se adapta al tipo de encuentro, los gustos y las necesidades alimentarias indicadas.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1 -->
-                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">01. Menú Personalizado</h3>
-                    <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">De 4 a 6 pases</p>
-                    <p class="font-light text-brand-cacao mb-8">Una experiencia creada según tus gustos, ingredientes preferidos y necesidades alimentarias.</p>
-                    <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
-                        <div>
-                            <p class="text-lg font-serif text-brand-vino">80-150 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
-                            <p class="text-xs text-brand-cacao">Ingredientes aparte</p>
+                <!-- Card 1: Menú Personalizado (Actualizado) -->
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2 text-brand-vino">01. Menú Personalizado</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Planificación y Preparación</p>
+                        <p class="font-light text-brand-cacao mb-8">Servicio completo de planificación del menú, preparación de 5 días de comidas y cenas, organización y limpieza.</p>
+                    </div>
+                    <div>
+                        <button onclick="openModal()" class="w-full mb-6 bg-brand-vino text-brand-marfil py-3 px-6 text-xs uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors text-center cursor-pointer">
+                            Ver detalles del Menú
+                        </button>
+                        <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
+                            <div>
+                                <p class="text-xl font-serif text-brand-vino">200 € <span class="text-sm font-sans font-light text-brand-cacao">/ 2 personas</span></p>
+                                <p class="text-xs text-brand-cacao">Ingredientes y envases aparte</p>
+                            </div>
+                            <p class="text-xs uppercase text-brand-avellana font-bold text-right">Para 2 pers.<br><span class="font-normal lowercase">(Más, consultar)</span></p>
                         </div>
-                        <p class="text-xs uppercase text-brand-avellana font-bold">1-12 Personas</p>
                     </div>
                 </div>
                 
                 <!-- Card 2 -->
-                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">02. Menús de Autor</h3>
-                    <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Seis conceptos</p>
-                    <p class="font-light text-brand-cacao mb-8">Elige una línea gastronómica con identidad propia, equilibrio y atención a la presentación.</p>
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2 text-brand-vino">02. Menús de Autor</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Seis conceptos</p>
+                        <p class="font-light text-brand-cacao mb-8">Elige una línea gastronómica con identidad propia, equilibrio y atención a la presentación.</p>
+                    </div>
                     <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
                         <div>
                             <p class="text-lg font-serif text-brand-vino">55-85 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
                             <p class="text-xs text-brand-cacao">Servicio completo</p>
                         </div>
-                        <p class="text-xs uppercase text-brand-avellana font-bold">2-16 Personas</p>
+                        <p class="text-xs uppercase text-brand-avellana font-bold text-right">Para 2 pers.<br><span class="font-normal lowercase">(Más, consultar)</span></p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">03. Escapada Romántica</h3>
-                    <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Una cena para dos</p>
-                    <p class="font-light text-brand-cacao mb-8">Cena íntima de 3 a 4 pases para aniversarios, pedidas o una ocasión especial en casa o villa.</p>
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2 text-brand-vino">03. Escapada Romántica</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Una cena para dos</p>
+                        <p class="font-light text-brand-cacao mb-8">Cena íntima de 3 a 4 pases para aniversarios, pedidas o una ocasión especial en casa o villa.</p>
+                    </div>
                     <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
                         <div>
                             <p class="text-lg font-serif text-brand-vino">180-280 € <span class="text-sm font-sans font-light text-brand-cacao">/ pareja</span></p>
                             <p class="text-xs text-brand-cacao">Llave en mano</p>
                         </div>
+                        <p class="text-xs uppercase text-brand-avellana font-bold text-right">Para 2 pers.<br><span class="font-normal lowercase">(Más, consultar)</span></p>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil">
-                    <h3 class="font-serif text-2xl mb-2 text-brand-vino">04. Boutique Catering</h3>
-                    <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Celebraciones cuidadas</p>
-                    <p class="font-light text-brand-cacao mb-8">Catering para bodas civiles, aniversarios y reuniones privadas, en formato banquete o cóctel.</p>
+                <div class="border border-brand-avellana/30 p-10 hover:border-brand-vino transition-colors fade-up stagger-card bg-brand-marfil flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl mb-2 text-brand-vino">04. Boutique Catering</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-avellana mb-6 font-bold">Celebraciones cuidadas</p>
+                        <p class="font-light text-brand-cacao mb-8">Catering para bodas civiles, aniversarios y reuniones privadas, en formato banquete o cóctel.</p>
+                    </div>
                     <div class="border-t border-brand-avellana/30 pt-4 flex justify-between items-end">
                         <div>
                             <p class="text-lg font-serif text-brand-vino">45-90 € <span class="text-sm font-sans font-light text-brand-cacao">/ persona</span></p>
                             <p class="text-xs text-brand-cacao">Según formato</p>
                         </div>
-                        <p class="text-xs uppercase text-brand-avellana font-bold">8-40 Personas</p>
+                        <p class="text-xs uppercase text-brand-avellana font-bold text-right">Para 2 pers.<br><span class="font-normal lowercase">(Más, consultar)</span></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal de Detalles: Menú Personalizado (Actualizado con los datos exactos) -->
+    <div id="menuModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-2xl w-full p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-6 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+            
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Detalle del Servicio</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-4">Menú Personalizado</h3>
+            <p class="text-sm font-bold uppercase tracking-widest text-brand-cacao mb-6">Precio: 200 € / Para 2 personas <br><span class="font-light text-xs lowercase">(Para más personas, consultar)</span></p>
+            
+            <div class="space-y-6 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <div>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Qué incluiría el servicio:</h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li>Planificación del menú semanal.</li>
+                        <li>Preparación de 5 días de comidas.</li>
+                        <li>Preparación de la cena.</li>
+                        <li>2–3 proteínas diferentes.</li>
+                        <li>Verduras y guarniciones.</li>
+                        <li>Organización en recipientes (tuppers).</li>
+                        <li>Limpieza del área de trabajo.</li>
+                        <li>Desplazamiento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-brand-avellana/30 flex flex-col md:flex-row justify-between items-center gap-4">
+                <span class="text-xs text-brand-cacao/80 font-medium">* Los ingredientes y los envases/tuppers se cobran aparte.</span>
+                <a href="https://wa.me/34663899626?text=Hola%20Diana,%20me%20interesa%20reservar%20el%20Menú%20Personalizado." target="_blank" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors text-center w-full md:w-auto">
+                    Reservar
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- 03 Menús -->
     <section id="menus" class="py-32 px-8 md:px-24 bg-brand-vino text-brand-marfil">
@@ -213,7 +259,7 @@
         </div>
     </section>
 
-    <!-- Grilla / Galería de Instagram (Con enlaces estables corregidos) -->
+    <!-- Grilla / Galería de Instagram -->
     <section id="instagram" class="py-32 px-4 md:px-12 lg:px-24 bg-brand-marfil">
         <div class="max-w-5xl mx-auto text-center mb-16">
             <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-4 fade-up">Comunidad & Platos</span>
@@ -221,53 +267,44 @@
         </div>
         
         <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2 fade-up border border-brand-avellana/30 p-1 bg-white shadow-xl">
-            <!-- Foto 1 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-vino">
                 <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop" alt="Plato saludable" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 left-4">
                     <p class="font-serif text-white text-lg md:text-xl leading-tight text-shadow-sm">El placer<br>de comer bien.</p>
                 </div>
             </div>
-            <!-- Foto 2 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-marfil">
                 <img src="https://images.unsplash.com/photo-1556910103-1c02745a872e?q=80&w=800&auto=format&fit=crop" alt="Preparación artesanal" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 right-4 text-right">
                     <p class="font-serif text-brand-vino text-lg md:text-xl leading-tight italic">Recibir<br>sin prisas.</p>
                 </div>
             </div>
-            <!-- Foto 3 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
                 <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop" alt="Mesa elegante" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute bottom-4 left-4">
                     <p class="font-serif text-white text-sm leading-tight text-shadow-sm">Una mesa<br>para dos.</p>
                 </div>
             </div>
-            <!-- Foto 4 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-avellana">
                 <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="Cocina plant-based" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
             </div>
-            <!-- Bloque Central con Logo Estilizado -->
             <div class="relative aspect-square flex flex-col items-center justify-center bg-brand-marfil p-4 text-center border border-brand-avellana/20">
                 <span class="font-script text-4xl md:text-5xl text-brand-vino mb-1">Diana</span>
                 <p class="text-[0.6rem] uppercase tracking-[0.3em] font-bold text-brand-cacao mb-3 border-b border-brand-avellana/40 pb-2">Te Cocina</p>
                 <p class="text-xs font-light text-brand-cacao/80">Cocina personal en Valencia</p>
             </div>
-            <!-- Foto 6 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-vino">
                 <img src="https://images.unsplash.com/photo-1559564114-633ca5e0034a?q=80&w=800&auto=format&fit=crop" alt="Cena romántica" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-85">
             </div>
-            <!-- Foto 7 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-marfil">
                 <img src="https://images.unsplash.com/photo-1543363363-241f92410a80?q=80&w=800&auto=format&fit=crop" alt="Batch cooking" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 left-4">
                     <p class="font-serif text-brand-vino text-lg leading-tight">Tu semana,<br><span class="italic">resuelta.</span></p>
                 </div>
             </div>
-            <!-- Foto 8 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" alt="Plato principal" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-85">
             </div>
-            <!-- Foto 9 -->
             <div class="relative group aspect-square overflow-hidden bg-brand-vino">
                 <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop" alt="Fusión y autor" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-90">
                 <div class="absolute top-4 right-4 text-right">
@@ -283,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Footer Contacto (Fondo Marfil con acentos Vino y Cacao) -->
+    <!-- Footer Contacto -->
     <footer class="bg-brand-marfil py-16 px-8 border-t border-brand-avellana/30">
         <div class="max-w-4xl mx-auto text-center flex flex-col items-center fade-up">
             <div class="mb-6">
@@ -292,7 +329,6 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-                <!-- Enlace de WhatsApp con Icono SVG -->
                 <a href="https://wa.me/34663899626" target="_blank" class="flex items-center gap-3 text-brand-cacao hover:text-brand-vino transition-colors group">
                     <svg class="w-6 h-6 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
@@ -300,7 +336,7 @@
                     <span class="tracking-widest uppercase text-xs font-bold">Contactar por WhatsApp</span>
                 </a>
                 
-                <a href="https://instagram.com/dianatecocina" target="_blank" class="text-xs font-bold tracking-widest uppercase hover:text-brand-vino transition-colors text-brand-c0cacao">@dianatecocina</a>
+                <a href="https://instagram.com/dianatecocina" target="_blank" class="text-xs font-bold tracking-widest uppercase hover:text-brand-vino transition-colors text-brand-cacao">@dianatecocina</a>
             </div>
             
             <p class="text-xs uppercase tracking-widest text-brand-avellana mt-12">Valencia y alrededores</p>
@@ -314,8 +350,22 @@
         </svg>
     </a>
 
-    <!-- GSAP Animation Scripts -->
+    <!-- Funciones JavaScript del Modal y Animaciones -->
     <script>
+        // Modal functions
+        function openModal() {
+            const modal = document.getElementById('menuModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('menuModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.to(".nav-anim", { opacity: 1, duration: 1.5, ease: "power3.out" });
@@ -352,5 +402,7 @@
             onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out" })
         });
     </script>
+</body>
+</html>
 </body>
 </html>
