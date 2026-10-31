@@ -44,9 +44,9 @@
             overflow-x: hidden;
         }
         
-        /* Imagen principal: Volvemos a la chef que funcionaba, pero con un filtro oscuro Cacao/Vino encima */
+        /* Imagen principal: Apunta a tu archivo local diana-fondo.jpg con el filtro oscuro aplicado */
         .hero-bg {
-            background: linear-gradient(rgba(55, 40, 33, 0.75), rgba(55, 40, 33, 0.95)), url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=2070&auto=format&fit=crop') center/cover;
+            background: linear-gradient(rgba(55, 40, 33, 0.75), rgba(55, 40, 33, 0.95)), url('diana-fondo.jpg') center/cover;
         }
         
         .fade-up { opacity: 0; transform: translateY(40px); }
@@ -201,4 +201,139 @@
                 <h4 class="font-serif text-2xl text-brand-marfil mb-2">05. Sabores del Este</h4>
                 <p class="font-light text-brand-marfil/70 text-sm leading-relaxed">Relectura contemporánea de recetas de Europa Oriental y los Balcanes.</p>
             </div>
-            <div class="fade-
+            <div class="fade-up stagger-menu border-t border-brand-avellana/30 pt-6">
+                <h4 class="font-serif text-2xl text-brand-marfil mb-2">06. Mediterráneo de Autor</h4>
+                <p class="font-light text-brand-marfil/70 text-sm leading-relaxed">Aceite de oliva virgen extra, hierbas frescas y productos de temporada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grilla Galería Interactiva -->
+    <section id="instagram" class="py-32 px-4 md:px-12 lg:px-24 bg-brand-vino">
+        <div class="max-w-5xl mx-auto text-center mb-16">
+            <span class="text-brand-avellana text-sm tracking-[0.2em] uppercase font-bold block mb-4 fade-up">Comunidad & Platos</span>
+            <h2 class="font-serif text-4xl md:text-5xl fade-up text-brand-marfil">El placer de comer bien.</h2>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2 fade-up border border-brand-avellana/20 p-1 bg-brand-cacao shadow-2xl">
+            <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop" alt="Plato saludable" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute top-4 left-4 lg:top-6 lg:left-6">
+                    <p class="font-serif text-white text-xl md:text-2xl leading-tight text-shadow-sm">El placer<br>de comer bien.</p>
+                </div>
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-brand-vino">
+                <img src="https://images.unsplash.com/photo-1498837167922-41c546cb4089?q=80&w=800&auto=format&fit=crop" alt="Preparación artesanal" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute top-4 right-4 lg:top-6 lg:right-6 text-right">
+                    <p class="font-serif text-white text-xl md:text-2xl leading-tight text-shadow-sm italic">Recibir<br>sin prisas.</p>
+                </div>
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-black">
+                <img src="https://images.unsplash.com/photo-1615966650071-855b15f29ad1?q=80&w=800&auto=format&fit=crop" alt="Mesa elegante" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-100">
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="Cocina plant-based" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-100">
+            </div>
+            <!-- Foto Logo -->
+            <div class="relative aspect-square flex flex-col items-center justify-center bg-brand-cacao p-4 text-center border border-brand-avellana/20">
+                <h3 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-marfil mb-1">Diana</h3>
+                <p class="text-[0.6rem] md:text-xs uppercase tracking-[0.3em] font-bold text-brand-avellana mb-4 border-b border-brand-avellana/50 pb-2">Te Cocina</p>
+                <p class="text-xs font-light text-brand-marfil/60">Cocina personal en Valencia</p>
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
+                <img src="https://images.unsplash.com/photo-1559564114-633ca5e0034a?q=80&w=800&auto=format&fit=crop" alt="Cena romántica" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-100">
+                <div class="absolute top-4 left-4 lg:top-6 lg:left-6">
+                    <p class="font-serif text-white text-xl md:text-2xl leading-tight text-shadow-sm">Una mesa<br>para dos.</p>
+                </div>
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-brand-vino">
+                <img src="https://images.unsplash.com/photo-1543363363-241f92410a80?q=80&w=800&auto=format&fit=crop" alt="Batch cooking" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute top-4 left-4 lg:top-6 lg:left-6">
+                    <p class="font-serif text-white text-xl md:text-2xl leading-tight text-shadow-sm">Tu semana,<br><span class="italic">resuelta.</span></p>
+                </div>
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-black">
+                <img src="https://images.unsplash.com/photo-1519996521430-02b798c1d881?q=80&w=800&auto=format&fit=crop" alt="Postres y desayunos" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-100">
+            </div>
+            <div class="relative group aspect-square overflow-hidden bg-brand-cacao">
+                <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=800&auto=format&fit=crop" alt="Fusión oriental" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute top-4 right-4 lg:top-6 lg:right-6 text-right">
+                    <p class="font-serif text-white text-xl md:text-2xl leading-tight text-shadow-sm">¿Qué te<br><span class="italic">apetece hoy?</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center mt-12 fade-up">
+            <a href="https://instagram.com/dianatecocina" target="_blank" class="inline-block bg-transparent border border-brand-marfil text-brand-marfil px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-marfil hover:text-brand-vino transition-all duration-300">
+                Visitar el Perfil
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Contacto -->
+    <footer class="bg-[#2a1e19] py-16 px-8 border-t border-brand-avellana/20">
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center fade-up">
+            <h2 class="font-serif text-3xl mb-8 text-brand-marfil">Diana Te Cocina</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                <a href="https://wa.me/34663899626" target="_blank" class="flex items-center gap-3 text-brand-marfil hover:text-brand-avellana transition-colors group">
+                    <svg class="w-6 h-6 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                    <span class="tracking-widest uppercase text-sm font-bold">Contactar</span>
+                </a>
+                
+                <a href="https://instagram.com/dianatecocina" target="_blank" class="text-sm font-bold tracking-widest uppercase hover:text-brand-avellana transition-colors text-brand-marfil">@dianatecocina</a>
+            </div>
+            
+            <p class="text-sm uppercase tracking-widest text-brand-marfil/50 mt-12">Valencia y alrededores</p>
+        </div>
+    </footer>
+
+    <!-- Icono Flotante Fijo de WhatsApp -->
+    <a href="https://wa.me/34663899626" target="_blank" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center" aria-label="Contactar por WhatsApp">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- GSAP Animation Scripts -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".nav-anim", { opacity: 1, duration: 1.5, ease: "power3.out" });
+        gsap.to(".hero-bg .fade-up", { 
+            y: 0, 
+            opacity: 1, 
+            duration: 1.2, 
+            stagger: 0.2, 
+            ease: "power3.out",
+            delay: 0.2 
+        });
+
+        gsap.utils.toArray('.fade-up:not(.hero-bg .fade-up)').forEach(element => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        ScrollTrigger.batch(".stagger-card", {
+            start: "top 85%",
+            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: "power3.out" })
+        });
+
+        ScrollTrigger.batch(".stagger-menu", {
+            start: "top 85%",
+            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out" })
+        });
+    </script>
+</body>
+</html>
