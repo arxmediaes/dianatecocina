@@ -259,7 +259,14 @@
                         <li>3) Plant Based</li>
                         <li>4) Fusión Oriental</li>
                         <li>5) Sabores del Este</li>
-                        <li>6) Mediterráneo</li>
+                        <li class="list-none md:col-span-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                <span>6) Mediterráneo</span>
+                                <button type="button" onclick="openMediterraneoModal()" class="bg-brand-vino text-brand-marfil px-5 py-2.5 text-[0.65rem] uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors">
+                                    Ver menú Mediterráneo
+                                </button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -269,6 +276,62 @@
                 <a href="https://wa.me/34663899626?text=Hola%20Diana,%20me%20interesa%20reservar%20uno%20de%20los%20Menús%20de%20Autor." target="_blank" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors text-center w-full md:w-auto">
                     Reservar
                 </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal de Detalles: Menú Mediterráneo Semanal -->
+    <div id="mediterraneoModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-3xl w-full p-6 md:p-10 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeMediterraneoModal()" aria-label="Cerrar menú Mediterráneo" class="absolute top-3 right-5 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Menú de Autor · 06</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-3 pr-8">Menú Mediterráneo Semanal</h3>
+            <p class="text-sm font-semibold text-brand-cacao mb-2">Servicio de chef privado: Comidas y cenas para 5 días.</p>
+            <p class="text-sm font-light text-brand-cacao mb-7">Diseña tu menú seleccionando: <strong>4 Entrantes, 5 Principales y 2 Guarniciones.</strong></p>
+
+            <div class="space-y-7 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Entrantes <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 4)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Esgarraet tradicional:</strong> Clásico valenciano de pimiento asado y bacalao.</li>
+                        <li><strong>Champiñones rellenos:</strong> Al horno con crujiente de bacon y queso parmesano.</li>
+                        <li><strong>Ensalada de atún y zanahoria:</strong> Fresca y ligera.</li>
+                        <li><strong>Ensalada griega:</strong> Con queso feta, pepino, tomate y aceitunas.</li>
+                        <li><strong>Ensalada de garbanzos:</strong> Legumbres aliñadas con vegetales frescos.</li>
+                        <li><strong>Huevos rellenos:</strong> Clásicos, rellenos de suave crema de atún.</li>
+                        <li><strong>Alcachofas con jamón:</strong> Corazones de alcachofa salteados con virutas de jamón.</li>
+                        <li><strong>Alcachofas rellenas:</strong> Elaboración casera al horno.</li>
+                        <li><strong>Rovellons salteados:</strong> Níscalos de temporada con ajo y perejil.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Platos Principales <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Carrillera al jugo con frutos secos:</strong> A elegir entre ternera o cerdo, estofada a fuego lento.</li>
+                        <li><strong>Lentejas tradicionales:</strong> Guiso reconfortante con chorizo y jamón.</li>
+                        <li><strong>Cocido valenciano:</strong> El clásico de la tierra, rico y completo.</li>
+                        <li><strong>Gambas a la naranja:</strong> Salteadas con reducción cítrica.</li>
+                        <li><strong>Rape en salsa verde:</strong> Pescado blanco tierno en salsa marinera.</li>
+                        <li><strong>Suquet de marisco:</strong> Tradicional guiso marinero con fondo intenso.</li>
+                        <li><strong>Salmón con salsa asiática:</strong> Lomo de salmón glaseado con toques orientales.</li>
+                        <li><strong>Pimientos rellenos:</strong> Asados y rellenos de arroz y carne picada.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Guarniciones <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 2)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Puré de patata:</strong> Cremoso y casero.</li>
+                        <li><strong>Puré de chirivía:</strong> Suave, con un ligero toque dulce.</li>
+                        <li><strong>Cuscús:</strong> Grano fino y suelto, ideal para acompañar salsas.</li>
+                        <li><strong>Verduras de temporada:</strong> Preparadas asadas o a la plancha.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-brand-avellana/30 flex justify-end">
+                <button type="button" onclick="closeMediterraneoModal()" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors w-full sm:w-auto">Cerrar</button>
             </div>
         </div>
     </div>
@@ -433,6 +496,19 @@
 
         function closeAutorModal() {
             const modal = document.getElementById('autorModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Modal functions - Mediterráneo Semanal
+        function openMediterraneoModal() {
+            const modal = document.getElementById('mediterraneoModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeMediterraneoModal() {
+            const modal = document.getElementById('mediterraneoModal');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
