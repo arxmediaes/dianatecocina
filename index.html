@@ -343,6 +343,57 @@
             </div>
 </div>
 
+    <!-- Modal de Detalles: Menú Asiático -->
+    <div id="asiaticoModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-3xl w-full p-6 md:p-10 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAsiaticoModal()" aria-label="Cerrar menú Asiático" class="absolute top-3 right-5 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Menú de Autor · 04</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-3 pr-8">Menú Asiático</h3>
+            <p class="text-sm font-semibold text-brand-cacao mb-2">Servicio de chef privado.</p>
+            <p class="text-sm font-light text-brand-cacao mb-7">Diseña tu menú seleccionando: <strong>5 Entrantes, 5 Principales y 1 Postre.</strong></p>
+            <div class="space-y-7 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Entrantes <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Chirashi Bowl (Poke):</strong> Bol de arroz base, a elegir entre atún, salmón o verduras frescas.</li>
+                        <li><strong>Onigiri:</strong> Triángulos de arroz tradicionales japoneses. Rellenos a elegir: Kimchi con queso, Salmón con queso Philadelphia o Unagi Kabayaki (anguila glaseada).</li>
+                        <li><strong>Sopa Miso:</strong> Caldo tradicional japonés reconfortante.</li>
+                        <li><strong>Edamame trufado:</strong> Vainas de soja tiernas al vapor con un toque de aceite de trufa.</li>
+                        <li><strong>Kimchi casero:</strong> Col fermentada con el característico toque picante coreano.</li>
+                        <li><strong>Ensalada Wakame:</strong> Algas marinadas acompañadas de pepino encurtido y suave aliño de sésamo.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Platos Principales <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Wok de ternera:</strong> Tiras de ternera salteadas a fuego fuerte con verduras crujientes.</li>
+                        <li><strong>Pollo a la naranja:</strong> Bocados de pollo crujiente bañados en salsa cítrica agridulce.</li>
+                        <li><strong>Noodles Yakisoba:</strong> Fideos finos salteados al estilo japonés con pollo y verduras de temporada.</li>
+                        <li><strong>Arroz frito asiático:</strong> Salteado al wok con huevo y gambas.</li>
+                        <li><strong>Yakitori de pollo:</strong> Brochetas tradicionales japonesas glaseadas en salsa dulce.</li>
+                        <li><strong>Gyozas de pollo y gamba:</strong> Empanadillas asiáticas, doradas a la plancha y jugosas por dentro.</li>
+                        <li><strong>Gyozas de carne y kimchi:</strong> Empanadillas con el toque intenso y ligeramente picante del kimchi.</li>
+                        <li><strong>Gyozas de pato y pera:</strong> Empanadillas gourmet con un elegante contraste dulce y salado.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Postres <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 1)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Cheesecake japonés:</strong> Tarta de queso oriental, famosa por su textura extra esponjosa y ligera como una nube.</li>
+                        <li><strong>Dorayakis:</strong> El clásico dulce japonés, formados por dos bizcochitos redondos y rellenos de chocolate o dulce de leche.</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="mt-8 pt-6 border-t border-brand-avellana/40 text-center">
+                <a href="https://wa.me/34663899626?text=Buenas%2C%20estoy%20interesado%2Fa%20en%20el%20men%C3%BA%20Asi%C3%A1tico%20%F0%9F%8D%B1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 text-xs uppercase tracking-widest font-bold hover:bg-[#1ebe5d] transition-colors w-full md:w-auto">Reservar por WhatsApp</a>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button type="button" onclick="closeAsiaticoModal()" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors w-full sm:w-auto">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
     <!-- 03 Menús -->
     <section id="menus" class="py-32 px-8 md:px-24 bg-brand-vino text-brand-marfil">
         <div class="max-w-6xl mx-auto text-center mb-16">
@@ -367,6 +418,7 @@
             <div class="fade-up stagger-menu border-t border-brand-avellana/40 pt-6">
                 <h4 class="font-serif text-xl text-brand-marfil mb-2">04. Fusión Oriental</h4>
                 <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Inspiración asiática y nikkei, matices umami, cítricos y equilibrio aromático.</p>
+                <button type="button" onclick="openAsiaticoModal()" class="inline-block bg-brand-marfil text-brand-vino px-6 py-3 mt-4 text-xs uppercase tracking-widest font-bold hover:bg-brand-avellana hover:text-white transition-colors">Ver menú Asiático</button>
             </div>
             <div class="fade-up stagger-menu border-t border-brand-avellana/40 pt-6">
                 <h4 class="font-serif text-xl text-brand-marfil mb-2">05. Sabores del Este</h4>
@@ -519,6 +571,19 @@
 
         function closeMediterraneoModal() {
             const modal = document.getElementById('mediterraneoModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Modal functions - Menú Asiático
+        function openAsiaticoModal() {
+            const modal = document.getElementById('asiaticoModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeAsiaticoModal() {
+            const modal = document.getElementById('asiaticoModal');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
