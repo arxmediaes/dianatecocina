@@ -256,7 +256,12 @@
                     <h4 class="font-serif text-xl text-brand-vino mb-3">Selecciona tu concepto gastronómico:</h4>
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 list-disc pl-5 marker:text-brand-avellana font-medium">
                         <li>1) Sin Gluten</li>
-                        <li>2) Healthy & Fit</li>
+                        <li class="list-none md:col-span-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                <span>2) Healthy &amp; Fit</span>
+                                <button type="button" onclick="openHealthyModal()" class="bg-brand-vino text-brand-marfil px-5 py-2.5 text-[0.65rem] uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors">Ver menú Healthy</button>
+                            </div>
+                        </li>
                         <li>3) Plant Based</li>
                         <li>4) Fusión Oriental</li>
                         <li>5) Sabores del Este</li>
@@ -402,6 +407,85 @@
     </div>
 
 
+
+    <!-- Modal de Detalles: Menú Healthy -->
+    <div id="healthyModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-3xl w-full p-6 md:p-10 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeHealthyModal()" aria-label="Cerrar menú Healthy" class="absolute top-3 right-5 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Menú de Autor · 02</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-3 pr-8">Menú Healthy</h3>
+            <p class="text-sm font-semibold text-brand-cacao mb-2">Servicio de chef privado: Comidas y cenas para 5 días.</p>
+            <p class="text-sm font-light text-brand-cacao mb-7">Diseña tu menú seleccionando: <strong>5 Entrantes, 5 Principales, 3 Guarniciones y 2 Postres.</strong></p>
+            <div class="space-y-7 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Entrantes <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Hummus:</strong> Crema de garbanzos con tahini, limón y aceite de oliva.</li>
+                        <li><strong>Tabulé de cuscús:</strong> Ensalada fresca de cuscús con tomate, pepino, perejil y hierbabuena.</li>
+                        <li><strong>Champiñones al ajillo:</strong> Salteados con ajo, perejil y aceite de oliva.</li>
+                        <li><strong>Berenjenas con salsa de pimiento dulce:</strong> Berenjenas asadas con una salsa suave y aromática.</li>
+                        <li><strong>Crema de lentejas:</strong> Crema nutritiva de lentejas con especias suaves.</li>
+                        <li><strong>Crema de calabaza:</strong> Textura cremosa con un toque de especias.</li>
+                        <li><strong>Crema de guisantes, menta y limón:</strong> Fresca, ligera y aromática.</li>
+                        <li><strong>Muhammara:</strong> Crema de pimiento asado y nueces con un toque de especias.</li>
+                        <li><strong>Ensalada de alubias con verduras:</strong> Alubias acompañadas de vegetales frescos y aliño ligero.</li>
+                        <li><strong>Alcachofas al horno:</strong> Asadas con ajo, limón y hierbas aromáticas.</li>
+                        <li><strong>Ensalada griega:</strong> Tomate, pepino, aceitunas, cebolla y queso feta.</li>
+                        <li><strong>Crep de espinacas y salmón:</strong> Crep relleno de espinacas salteadas y salmón.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Platos Principales <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Ragú de hígados y corazón de pollo:</strong> Guiso de casquería de pollo cocinado lentamente.</li>
+                        <li><strong>Pollo asado con manzanas:</strong> Pollo al horno acompañado de manzanas asadas y hierbas aromáticas.</li>
+                        <li><strong>Merluza en salsa mediterránea:</strong> Merluza con tomate cherry, ajo, aceite de oliva y hierbas frescas.</li>
+                        <li><strong>Salmón en papillote:</strong> Salmón al horno en su propio jugo con verduras y hierbas.</li>
+                        <li><strong>Guisado de ternera estilo francés:</strong> Ternera estofada lentamente con verduras y salsa de inspiración francesa.</li>
+                        <li><strong>Ragú de lentejas y pollo:</strong> Guiso completo de lentejas con pollo y verduras.</li>
+                        <li><strong>Wrap de pollo estilo griego:</strong> Pollo especiado con vegetales frescos y salsa de yogur.</li>
+                        <li><strong>Wrap de gambas:</strong> Gambas salteadas con verduras frescas y salsa ligera.</li>
+                        <li><strong>Cordero asado:</strong> Cordero al horno con hierbas aromáticas.</li>
+                        <li><strong>Hamburguesas de pavo y pollo:</strong> Elaboradas con carne magra y hierbas aromáticas.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Guarniciones <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 3)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Trigo sarraceno:</strong> Cocido y suelto, ideal como acompañamiento.</li>
+                        <li><strong>Coliflor con cúrcuma:</strong> Asada con cúrcuma y especias suaves.</li>
+                        <li><strong>Verduras asadas:</strong> Selección de verduras de temporada al horno.</li>
+                        <li><strong>Quinoa:</strong> Cocida y aliñada con hierbas frescas.</li>
+                        <li><strong>Batata asada:</strong> Tierna, con un toque de aceite de oliva.</li>
+                        <li><strong>Patata asada:</strong> Dorada por fuera y tierna por dentro.</li>
+                        <li><strong>Alcachofas con judías y guisantes:</strong> Salteado de alcachofas y verduras.</li>
+                        <li><strong>Alcachofas en salsa:</strong> Alcachofas tiernas guisadas en salsa casera.</li>
+                        <li><strong>Arroz blanco:</strong> Arroz ligero y esponjoso.</li>
+                        <li><strong>Arroz negro:</strong> Arroz cocinado con tinta de calamar y fondo marinero.</li>
+                        <li><strong>Puré de zanahoria:</strong> Suave y cremoso, con un toque de especias.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Postres <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 2)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Manzana asada:</strong> Asada lentamente con canela.</li>
+                        <li><strong>Peras al vino blanco con azafrán:</strong> Cocinadas lentamente con un delicado toque de azafrán.</li>
+                        <li><strong>Crep alto en proteína:</strong> Elaborado con ingredientes ricos en proteínas.</li>
+                        <li><strong>Pudding de chía:</strong> Semillas de chía hidratadas en leche, con fruta fresca.</li>
+                        <li><strong>Gofres de zanahoria:</strong> Suaves, con zanahoria y especias.</li>
+                        <li><strong>Gofres de requesón:</strong> Tiernos y elaborados con requesón.</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="mt-8 pt-6 border-t border-brand-avellana/40 text-center">
+                <a href="https://wa.me/34663899626?text=Buenas%2C%20estoy%20interesado%2Fa%20en%20el%20men%C3%BA%20Healthy%20%F0%9F%A5%97" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 text-xs uppercase tracking-widest font-bold hover:bg-[#1ebe5d] transition-colors w-full md:w-auto">Reservar por WhatsApp</a>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button type="button" onclick="closeHealthyModal()" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors w-full sm:w-auto">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- 03 Menús -->
     <section id="menus" class="py-32 px-8 md:px-24 bg-brand-vino text-brand-marfil">
         <div class="max-w-6xl mx-auto text-center mb-16">
@@ -418,6 +502,7 @@
             <div class="fade-up stagger-menu border-t border-brand-avellana/40 pt-6">
                 <h4 class="font-serif text-xl text-brand-marfil mb-2">02. Healthy & Fit</h4>
                 <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Menús equilibrados, ingredientes de calidad y técnicas que priorizan sabor.</p>
+                <button type="button" onclick="openHealthyModal()" class="inline-block bg-brand-marfil text-brand-vino px-6 py-3 mt-4 text-xs uppercase tracking-widest font-bold hover:bg-brand-avellana hover:text-white transition-colors">Ver menú Healthy</button>
             </div>
             <div class="fade-up stagger-menu border-t border-brand-avellana/40 pt-6">
                 <h4 class="font-serif text-xl text-brand-marfil mb-2">03. Plant-Based</h4>
@@ -592,6 +677,19 @@
 
         function closeAsiaticoModal() {
             const modal = document.getElementById('asiaticoModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Modal functions - Menú Healthy
+        function openHealthyModal() {
+            const modal = document.getElementById('healthyModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeHealthyModal() {
+            const modal = document.getElementById('healthyModal');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
