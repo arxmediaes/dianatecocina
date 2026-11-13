@@ -262,7 +262,12 @@
                                 <button type="button" onclick="openHealthyModal()" class="bg-brand-vino text-brand-marfil px-5 py-2.5 text-[0.65rem] uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors">Ver menú Healthy</button>
                             </div>
                         </li>
-                        <li>3) Plant Based</li>
+                        <li class="list-none md:col-span-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                <span>3) Plant Based · Menú Vegano</span>
+                                <button type="button" onclick="openVeganoModal()" class="bg-brand-vino text-brand-marfil px-5 py-2.5 text-[0.65rem] uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors">Ver menú Vegano</button>
+                            </div>
+                        </li>
                         <li>4) Fusión Oriental</li>
                         <li>5) Sabores del Este</li>
                         <li class="list-none md:col-span-2">
@@ -286,6 +291,75 @@
         </div>
     </div>
 
+
+
+    <!-- Modal de Detalles: Menú Vegano / Plant Based -->
+    <div id="veganoModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-3xl w-full p-6 md:p-10 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeVeganoModal()" aria-label="Cerrar menú Vegano" class="absolute top-3 right-5 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Menú de Autor · 03</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-3 pr-8">Menú Vegano · Plant Based</h3>
+            <p class="text-sm font-semibold text-brand-cacao mb-2">Una propuesta vegetal, variada y llena de sabor.</p>
+            <p class="text-sm font-light text-brand-cacao mb-7">Diseña tu menú seleccionando: <strong>5 entrantes, 4 segundos, 3 guarniciones y 2 postres.</strong></p>
+
+            <div class="space-y-7 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Entrantes <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Crema de tomate:</strong> Suave y aromática, elaborada con tomate y verduras.</li>
+                        <li><strong>Hummus de remolacha:</strong> Cremoso, con garbanzos y un toque dulce de remolacha.</li>
+                        <li><strong>Muchamara:</strong> Crema de pimiento asado, nueces y especias.</li>
+                        <li><strong>Esgarraet vegano:</strong> Pimiento asado y bacalao vegetal, en versión 100 % vegetal.</li>
+                        <li><strong>Rollitos de primavera:</strong> Crujientes, rellenos de verduras.</li>
+                        <li><strong>Rollitos vietnamitas:</strong> Frescos y rellenos de vegetales.</li>
+                        <li><strong>Crema de cebolla:</strong> Elaborada con cebolla pochada y caldo vegetal.</li>
+                        <li><strong>Crema de lentejas con verduras:</strong> Nutritiva y reconfortante.</li>
+                        <li><strong>Verduras encurtidas:</strong> Una selección de vegetales marinados.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Segundos <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 4)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Poke de verduras:</strong> Base de arroz con vegetales frescos y aderezos.</li>
+                        <li><strong>Curry de lentejas:</strong> Lentejas especiadas en una salsa cremosa de coco.</li>
+                        <li><strong>Ragú de verduras:</strong> Guiso vegetal cocinado lentamente.</li>
+                        <li><strong>Albóndigas de patata y queso:</strong> Tiernas y doradas, elaboradas con queso vegano.</li>
+                        <li><strong>Hamburguesa de setas y arroz:</strong> Hamburguesa vegetal casera.</li>
+                        <li><strong>Tteokbokki vegano:</strong> Pasteles de arroz coreanos en salsa picante vegetal.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Guarniciones <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 3)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Verduras asadas:</strong> Selección de verduras al horno.</li>
+                        <li><strong>Puré de chirivía:</strong> Suave y ligeramente dulce.</li>
+                        <li><strong>Puré de patata:</strong> Cremoso, preparado sin lácteos.</li>
+                        <li><strong>Trigo sarraceno:</strong> Cocido y aliñado para acompañar tus platos.</li>
+                        <li><strong>Arroz con verduras:</strong> Arroz salteado con vegetales.</li>
+                        <li><strong>Quinoa:</strong> Ligera y nutritiva, ideal como acompañamiento.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Postres <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 2)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Manzana asada:</strong> Con canela y aromas naturales.</li>
+                        <li><strong>Pera al vino tinto o blanco:</strong> Cocinada con vino apto para veganos.</li>
+                        <li><strong>Pudding de chía:</strong> A elegir el sabor, preparado con bebida vegetal.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-brand-avellana/40 text-center">
+                <a href="https://wa.me/34663899626?text=Buenas%2C%20estoy%20interesado%2Fa%20en%20el%20men%C3%BA%20Vegano%20%F0%9F%8C%B1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 text-xs uppercase tracking-widest font-bold hover:bg-[#1ebe5d] transition-colors w-full md:w-auto">
+                    Reservar por WhatsApp
+                </a>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button type="button" onclick="closeVeganoModal()" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors w-full sm:w-auto">Cerrar</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal de Detalles: Menú Mediterráneo Semanal -->
     <div id="mediterraneoModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
@@ -666,6 +740,19 @@
 
         function closeMediterraneoModal() {
             const modal = document.getElementById('mediterraneoModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Modal functions - Menú Vegano / Plant Based
+        function openVeganoModal() {
+            const modal = document.getElementById('veganoModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeVeganoModal() {
+            const modal = document.getElementById('veganoModal');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
