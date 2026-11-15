@@ -255,7 +255,12 @@
                 <div class="pt-4">
                     <h4 class="font-serif text-xl text-brand-vino mb-3">Selecciona tu concepto gastronómico:</h4>
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 list-disc pl-5 marker:text-brand-avellana font-medium">
-                        <li>1) Sin Gluten</li>
+                        <li class="list-none md:col-span-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                <span>1) Sin Gluten</span>
+                                <button type="button" onclick="openSinGlutenModal()" class="bg-brand-vino text-brand-marfil px-5 py-2.5 text-[0.65rem] uppercase tracking-widest font-bold hover:bg-brand-cacao transition-colors">Ver menú Sin Gluten</button>
+                            </div>
+                        </li>
                         <li class="list-none md:col-span-2">
                             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                                 <span>2) Healthy &amp; Fit</span>
@@ -292,6 +297,81 @@
     </div>
 
 
+
+
+    <!-- Modal de Detalles: Menú Sin Gluten -->
+    <div id="sinGlutenModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
+        <div class="bg-brand-marfil border border-brand-avellana max-w-3xl w-full p-6 md:p-10 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button onclick="closeSinGlutenModal()" aria-label="Cerrar menú Sin Gluten" class="absolute top-3 right-5 text-brand-vino hover:text-brand-cacao text-4xl font-light cursor-pointer">&times;</button>
+
+            <span class="text-brand-avellana text-xs tracking-[0.2em] uppercase font-bold block mb-2">Menú de Autor · 01</span>
+            <h3 class="font-serif text-3xl md:text-4xl text-brand-vino mb-3 pr-8">Menú Sin Gluten</h3>
+            <p class="text-sm font-semibold text-brand-cacao mb-2">Una propuesta variada para disfrutar de comidas y cenas durante 5 días.</p>
+            <p class="text-sm font-light text-brand-cacao mb-3">Elige tu combinación: <strong>5 entrantes, 5 segundos, 2 guarniciones y 2 postres.</strong></p>
+            <p class="text-sm font-bold text-brand-vino mb-7">Precio base: 150 € · Para 2 personas <span class="block text-xs font-normal text-brand-cacao mt-1">Para más comensales, solicita un presupuesto personalizado.</span></p>
+
+            <div class="space-y-7 text-brand-cacao font-light text-sm leading-relaxed border-t border-brand-avellana/30 pt-6">
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Entrantes <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Esgarraet:</strong> Pimiento asado aliñado con aceite de oliva y bacalao.</li>
+                        <li><strong>Champiñones rellenos de beicon y parmesano:</strong> Gratinados al horno.</li>
+                        <li><strong>Ensalada de atún con zanahoria:</strong> Fresca y ligera.</li>
+                        <li><strong>Ensalada griega:</strong> Con tomate, pepino, aceitunas y queso feta.</li>
+                        <li><strong>Ensalada de garbanzos:</strong> Con vegetales frescos y aliño de la casa.</li>
+                        <li><strong>Huevos rellenos de atún:</strong> Con una suave crema de atún.</li>
+                        <li><strong>Alcachofas con jamón:</strong> Salteadas con taquitos de jamón.</li>
+                        <li><strong>Alcachofas rellenas:</strong> Elaboración casera al horno.</li>
+                        <li><strong>Robellones salteados:</strong> Con ajo, perejil y aceite de oliva.</li>
+                        <li><strong>Crema de tomate:</strong> Suave y aromática.</li>
+                        <li><strong>Crema de calabaza:</strong> Cremosa y ligeramente dulce.</li>
+                        <li><strong>Crema de espárragos blancos:</strong> Delicada y suave.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Segundos <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 5)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Carrillera de ternera o cerdo con frutos secos:</strong> Cocinada lentamente hasta quedar tierna.</li>
+                        <li><strong>Lentejas con chorizo y jamón:</strong> Guiso tradicional y reconfortante.</li>
+                        <li><strong>Cocido valenciano:</strong> Receta casera con carnes, legumbres y verduras.</li>
+                        <li><strong>Gambas a la naranja:</strong> Con salsa cítrica y aromática.</li>
+                        <li><strong>Rape en salsa verde:</strong> Pescado suave con perejil y ajo.</li>
+                        <li><strong>Suquet de marisco:</strong> Guiso marinero lleno de sabor.</li>
+                        <li><strong>Salmón con salsa asiática:</strong> Glaseado de inspiración oriental.</li>
+                        <li><strong>Pimientos rellenos de arroz y carne:</strong> Asados y terminados al horno.</li>
+                        <li><strong>Rollitos de carne en col china:</strong> Rellenos jugosos envueltos en hojas de col.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Guarniciones <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 2)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Puré de patata:</strong> Cremoso y casero.</li>
+                        <li><strong>Puré de chirivía:</strong> Suave, con un delicado toque dulce.</li>
+                        <li><strong>Verduras asadas o a la plancha:</strong> Selección de temporada.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 class="font-serif text-xl text-brand-vino mb-3">Postres <span class="font-sans text-xs uppercase tracking-widest text-brand-avellana">(Elige 2)</span></h4>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-brand-avellana">
+                        <li><strong>Crepe:</strong> Preparado con harina certificada sin gluten.</li>
+                        <li><strong>Manzana asada:</strong> Con canela y aromas naturales.</li>
+                        <li><strong>Gofres de carrot cake:</strong> Elaborados con mezcla de harinas sin gluten.</li>
+                        <li><strong>Pera al vino blanco o tinto:</strong> Cocinada lentamente con especias.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="mt-7 p-4 bg-white/70 border border-brand-avellana/30 text-xs leading-relaxed text-brand-cacao">
+                Para celiaquía o alta sensibilidad al gluten, indícalo al reservar. Se deben confirmar los ingredientes, etiquetados y medidas de prevención de contaminación cruzada antes de preparar el pedido.
+            </div>
+            <div class="mt-8 pt-6 border-t border-brand-avellana/40 text-center">
+                <a href="https://wa.me/34663899626?text=Buenas%2C%20estoy%20interesado%2Fa%20en%20el%20men%C3%BA%20Sin%20Gluten" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 text-xs uppercase tracking-widest font-bold hover:bg-[#1ebe5d] transition-colors w-full md:w-auto">Consultar y reservar por WhatsApp</a>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button type="button" onclick="closeSinGlutenModal()" class="bg-brand-vino text-brand-marfil px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-brand-cacao transition-colors w-full sm:w-auto">Cerrar</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal de Detalles: Menú Vegano / Plant Based -->
     <div id="veganoModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4 py-6">
@@ -574,6 +654,7 @@
             <div class="fade-up stagger-menu border-t border-brand-avellana/40 pt-6">
                 <h4 class="font-serif text-xl text-brand-marfil mb-2">01. Sin Gluten</h4>
                 <p class="font-light text-brand-marfil/80 text-sm leading-relaxed">Elaboraciones con ingredientes seleccionados y alternativas al trigo.</p>
+                <button type="button" onclick="openSinGlutenModal()" class="inline-block bg-brand-marfil text-brand-vino px-6 py-3 mt-4 text-xs uppercase tracking-widest font-bold hover:bg-brand-avellana hover:text-white transition-colors">Ver menú Sin Gluten</button>
             </div>
             <div class="fade-up stagger-menu border-t border-brand-avellana/40 pt-6">
                 <h4 class="font-serif text-xl text-brand-marfil mb-2">02. Healthy & Fit</h4>
@@ -741,6 +822,19 @@
 
         function closeMediterraneoModal() {
             const modal = document.getElementById('mediterraneoModal');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Modal functions - Menú Sin Gluten
+        function openSinGlutenModal() {
+            const modal = document.getElementById('sinGlutenModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeSinGlutenModal() {
+            const modal = document.getElementById('sinGlutenModal');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
