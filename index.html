@@ -35,10 +35,12 @@
     </script>
 
     <style>
+        html, body {
+            overflow-x: clip;
+        }
         body {
-            background-color: #F9F3E9; 
+            background-color: #F9F3E9;
             color: #372821;
-            overflow-x: hidden;
         }
         
         .hero-bg {
@@ -63,7 +65,13 @@
         @media (max-width: 767px) {
             html, body {
                 scroll-behavior: auto !important;
-                -webkit-overflow-scrolling: touch;
+                overflow-x: clip !important;
+            }
+            /* Evita capas GPU de blur/backdrop-filter que pueden parpadear al desplazar en Chrome Android. */
+            [class*="backdrop-blur"], .blur-2xl {
+                -webkit-backdrop-filter: none !important;
+                backdrop-filter: none !important;
+                filter: none !important;
             }
             *, *::before, *::after {
                 animation: none !important;
