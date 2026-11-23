@@ -10,10 +10,7 @@
     
     <!-- Google Fonts: Great Vibes (Logo) + Playfair Display (Títulos) + Open Sans (Textos) -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- GSAP for Smooth Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Animaciones GSAP desactivadas para evitar parpadeo en móviles. -->
 
     <script>
         tailwind.config = {
@@ -61,7 +58,38 @@
             }
         }
         .text-shadow-sm { text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
-    </style>
+            
+        /* Estabilidad visual en móviles: sin animaciones, filtros ni repintados al hacer scroll. */
+        @media (max-width: 767px) {
+            html, body {
+                scroll-behavior: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+                caret-color: transparent;
+            }
+            nav {
+                -webkit-backdrop-filter: none !important;
+                backdrop-filter: none !important;
+                transform: none !important;
+                will-change: auto !important;
+            }
+            .hero-bg {
+                background-attachment: scroll !important;
+                background-position: center center !important;
+                transform: none !important;
+                filter: none !important;
+            }
+            .fade-up, .fade-in, .nav-anim {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+            }
+        }
+</style>
 </head>
 <body class="font-sans antialiased text-brand-cacao relative">
 
@@ -892,43 +920,7 @@
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
 
-        // Animaciones seguras: se ejecutan una sola vez y nunca ocultan el contenido.
-        (function () {
-            if (!window.gsap) return;
-
-            if (window.ScrollTrigger) {
-                gsap.registerPlugin(ScrollTrigger);
-            }
-
-            gsap.fromTo(".nav-anim",
-                { opacity: 0, y: -8 },
-                { opacity: 1, y: 0, duration: 0.7, ease: "power2.out", clearProps: "transform" }
-            );
-
-            gsap.fromTo(".hero-bg .fade-up",
-                { opacity: 0, y: 24 },
-                { opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: "power2.out", delay: 0.1, clearProps: "transform" }
-            );
-
-            gsap.utils.toArray(".fade-up:not(.hero-bg .fade-up)").forEach(function (element) {
-                if (window.ScrollTrigger) {
-                    gsap.fromTo(element,
-                        { opacity: 0, y: 24 },
-                        {
-                            opacity: 1, y: 0, duration: 0.65, ease: "power2.out",
-                            clearProps: "transform",
-                            scrollTrigger: {
-                                trigger: element,
-                                start: "top 92%",
-                                once: true
-                            }
-                        }
-                    );
-                } else {
-                    gsap.set(element, { opacity: 1, y: 0, clearProps: "all" });
-                }
-            });
-        })();
+        // Animaciones desactivadas: priorizar estabilidad visual en móvil.
     </script>
 </body>
 </html>
