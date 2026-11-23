@@ -51,8 +51,15 @@
             background-repeat: no-repeat;
         }
         
-        .fade-up { opacity: 0; transform: translateY(40px); }
-        .fade-in { opacity: 0; }
+        /* El contenido permanece visible si GSAP o ScrollTrigger no cargan. */
+        .fade-up, .fade-in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
         .text-shadow-sm { text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
     </style>
 </head>
@@ -885,42 +892,43 @@
             modal.classList.add('opacity-0', 'pointer-events-none');
         }
 
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
+        // Animaciones seguras: se ejecutan una sola vez y nunca ocultan el contenido.
+        (function () {
+            if (!window.gsap) return;
 
-        gsap.to(".nav-anim", { opacity: 1, duration: 1.5, ease: "power3.out" });
-        gsap.to(".hero-bg .fade-up", { 
-            y: 0, 
-            opacity: 1, 
-            duration: 1.2, 
-            stagger: 0.2, 
-            ease: "power3.out",
-            delay: 0.2 
-        });
+            if (window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+            }
 
-        gsap.utils.toArray('.fade-up:not(.hero-bg .fade-up)').forEach(element => {
-            gsap.to(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                },
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out"
+            gsap.fromTo(".nav-anim",
+                { opacity: 0, y: -8 },
+                { opacity: 1, y: 0, duration: 0.7, ease: "power2.out", clearProps: "transform" }
+            );
+
+            gsap.fromTo(".hero-bg .fade-up",
+                { opacity: 0, y: 24 },
+                { opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: "power2.out", delay: 0.1, clearProps: "transform" }
+            );
+
+            gsap.utils.toArray(".fade-up:not(.hero-bg .fade-up)").forEach(function (element) {
+                if (window.ScrollTrigger) {
+                    gsap.fromTo(element,
+                        { opacity: 0, y: 24 },
+                        {
+                            opacity: 1, y: 0, duration: 0.65, ease: "power2.out",
+                            clearProps: "transform",
+                            scrollTrigger: {
+                                trigger: element,
+                                start: "top 92%",
+                                once: true
+                            }
+                        }
+                    );
+                } else {
+                    gsap.set(element, { opacity: 1, y: 0, clearProps: "all" });
+                }
             });
-        });
-
-        ScrollTrigger.batch(".stagger-card", {
-            start: "top 85%",
-            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: "power3.out" })
-        });
-
-        ScrollTrigger.batch(".stagger-menu", {
-            start: "top 85%",
-            onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: "power3.out" })
-        });
+        })();
     </script>
 </body>
 </html>
